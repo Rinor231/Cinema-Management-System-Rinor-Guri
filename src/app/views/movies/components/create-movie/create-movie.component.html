@@ -1,1 +1,41 @@
-<p>create-movie works!</p>
+<div class="create-user-form">
+  <form [formGroup]="createMovieForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" formControlName="title" required>
+      <div *ngIf="createMovieForm.get('title').touched && createMovieForm.get('title').errors">
+        <small class="text-danger" *ngIf="createMovieForm.get('title').errors['required']">
+          Title is required.
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" id="category" formControlName="category" required>
+      <div *ngIf="createMovieForm.get('category').touched && createMovieForm.get('category').errors">
+        <small class="text-danger" *ngIf="createMovieForm.get('category').errors['required']">
+          Category is required.
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="releasedate">Release Date:</label>
+      <input type="text" id="releasedate" formControlName="releasedate" required>
+      <div *ngIf="createMovieForm.get('releasedate').touched && createMovieForm.get('releasedate').errors">
+        <small class="text-danger" *ngIf="createMovieForm.get('releasedate').errors['required']">
+          Release Date is required.
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="director">Director:</label>
+      <input type="text" id="director" formControlName="director" required>
+      <div *ngIf="createMovieForm.get('director').touched && createMovieForm.get('director').errors">
+        <small class="text-danger" *ngIf="createMovieForm.get('director').errors['required']">
+          Director is required.
+        </small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!createMovieForm.valid">Create Movie</button>
+  </form>
+</div>

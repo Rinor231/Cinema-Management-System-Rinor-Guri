@@ -1,1 +1,15 @@
-<p>edit-category works!</p>
+<div class="edit-user-form">
+  <form [formGroup]="editCategoryForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" formControlName="name" required>
+
+      <div *ngIf="editCategoryForm.get('name').touched && editCategoryForm.get('name').errors">
+        <small class="text-danger" *ngIf="editCategoryForm.get('name').errors['required']">
+          First name is required.
+        </small>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!editCategoryForm.valid">Update Category</button>
+  </form>
+</div>

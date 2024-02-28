@@ -1,0 +1,10 @@
+.category-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.header {
+  border-bottom: 1px solid lightgray;
+}
