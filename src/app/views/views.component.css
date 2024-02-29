@@ -32,3 +32,12 @@
   overflow: auto;
   height: 100%;
 }
+
+.landingpage-button {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar{
+  background: #5b1987;
+}
