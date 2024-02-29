@@ -1,12 +1,12 @@
-<div class="edit-user-form">
+<div class="edit-category-form">
   <form [formGroup]="editCategoryForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">First Name:</label>
+      <label for="name">Name:</label>
       <input type="text" id="name" formControlName="name" required>
 
       <div *ngIf="editCategoryForm.get('name').touched && editCategoryForm.get('name').errors">
         <small class="text-danger" *ngIf="editCategoryForm.get('name').errors['required']">
-          First name is required.
+          name is required.
         </small>
       </div>
     </div>
