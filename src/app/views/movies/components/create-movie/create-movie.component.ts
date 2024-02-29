@@ -20,6 +20,7 @@ export class CreateMovieComponent implements OnInit {
       category: new FormControl('', Validators.required),
       releasedate: new FormControl('', Validators.required),
       director: new FormControl('', Validators.required),
+      image: new FormControl ('', Validators.required)
     });
   }
   onSubmit() {

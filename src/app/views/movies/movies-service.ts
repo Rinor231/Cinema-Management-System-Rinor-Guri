@@ -28,7 +28,8 @@ export class MovieService {
             existingMovie.title === movie.title &&
             existingMovie.category === movie.category &&
             existingMovie.releasedate === movie.releasedate &&
-            existingMovie.director === movie.director
+            existingMovie.director === movie.director &&
+            existingMovie.image === movie.image
             );
 
             if(isDuplicate){

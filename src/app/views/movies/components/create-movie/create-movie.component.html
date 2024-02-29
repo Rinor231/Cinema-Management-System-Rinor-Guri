@@ -36,6 +36,15 @@
         </small>
       </div>
     </div>
+    <div class="form-group">
+      <label for="image">Image:</label>
+      <input type="url" id="image" formControlName="image" required>
+      <div *ngIf="createMovieForm.get('image').touched && createMovieForm.get('image').errors">
+        <small class="text-danger" *ngIf="createMovieForm.get('image').errors['required']">
+          Image is required.
+        </small>
+      </div>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!createMovieForm.valid">Create Movie</button>
   </form>
 </div>

@@ -20,15 +20,14 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="release date">Release Date:</label>
-      <input type="text" id="release-date" formControlName="Release Date" required>
-      <div *ngIf="editMovieForm.get('release date').touched && editMovieForm.get('release date').errors">
-        <small class="text-danger" *ngIf="editMovieForm.get('release date').errors['required']">
+      <label for="releasedate">Release Date:</label>
+      <input type="text" id="releasedate" formControlName="releasedate" required>
+      <div *ngIf="editMovieForm.get('releasedate').touched && editMovieForm.get('releasedate').errors">
+        <small class="text-danger" *ngIf="editMovieForm.get('releasedate').errors['required']">
           Release Date is required.
         </small>
       </div>
     </div>
-    <div>
       <div class="form-group">
         <label for="director">Director:</label>
         <input type="text" id="director" formControlName="director" required>
@@ -38,7 +37,15 @@
           </small>
         </div>
       </div>
-    </div>
+      <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="url" id="image" formControlName="image" required>
+        <div *ngIf="editMovieForm.get('image').touched && editMovieForm.get('image').errors">
+          <small class="text-danger" *ngIf="editMovieForm.get('image').errors['required']">
+            Image is required.
+          </small>
+        </div>
+      </div>
   </form>
   <button type="submit" class="btn btn-primary" [disabled]="!editMovieForm.valid">Update Movie</button>
 </div>

@@ -1,0 +1,29 @@
+    .card {
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    padding: 15px;
+  }
+
+  .card-img-top {
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+  }
+.landing-page {
+  background-color: #1e1e1e;
+  /* Dark background color */
+  color: #ffffff;
+  /* Text color */
+  font-family: 'Arial', sans-serif;
+}
+
+.dashboard{
+  text-decoration: none;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  margin-top: 3px;
+}
+.navbar{
+  justify-content: space-between;
+}

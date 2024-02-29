@@ -3,19 +3,19 @@
     <h1>{{movieDetails?.title +' details'}}</h1>
   </div>
   <div class="movie-details">
-    <ng-container *ngIf="movieDetails.firstname">
+    <ng-container *ngIf="movieDetails.title">
       <div>
         <label for="title"><b>Title:</b></label>
         <p>{{movieDetails?.title}}</p>
       </div>
     </ng-container>
-    <ng-container *ngIf="movieDetails.lastname">
+    <ng-container *ngIf="movieDetails.category">
       <div>
         <label for="category"><b>Category:</b></label>
         <p>{{movieDetails?.category}}</p>
       </div>
     </ng-container>
-    <ng-container *ngIf="movieDetails.category">
+    <ng-container *ngIf="movieDetails.releasedate">
       <div>
         <label for="title"><b>Release Date:</b></label>
         <p>{{movieDetails?.releasedate}}</p>
@@ -25,6 +25,12 @@
       <div>
         <label for="status"><b>Director:</b></label>
         <p>{{movieDetails?.director}}</p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="movieDetails.image">
+      <div>
+        <label for="status"><b>Image:</b></label>
+        <p>{{movieDetails?.image}}</p>
       </div>
     </ng-container>
   </div>
