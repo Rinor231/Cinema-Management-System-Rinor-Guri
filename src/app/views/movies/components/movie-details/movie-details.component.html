@@ -12,7 +12,7 @@
     <ng-container *ngIf="movieDetails.category">
       <div>
         <label for="category"><b>Category:</b></label>
-        <p>{{movieDetails?.category}}</p>
+        <p>{{movieDetails?.categoryId}}</p>
       </div>
     </ng-container>
     <ng-container *ngIf="movieDetails.releasedate">
@@ -30,7 +30,7 @@
     <ng-container *ngIf="movieDetails.image">
       <div>
         <label for="status"><b>Image:</b></label>
-        <p>{{movieDetails?.image}}</p>
+        <img src="{{movieDetails?.image}}" alt="{{movieDetails?.title}}" style="height: 100px; width: 100px;">
       </div>
     </ng-container>
   </div>

@@ -3,10 +3,9 @@
     <div class="form-group">
       <label for="name">Name:</label>
       <input type="text" id="name" formControlName="name" required>
-
       <div *ngIf="createCategoryForm.get('name').touched && createCategoryForm.get('name').errors">
         <small class="text-danger" *ngIf="createCategoryForm.get('name').errors['required']">
-          First name is required.
+          name required.
         </small>
       </div>
     </div>

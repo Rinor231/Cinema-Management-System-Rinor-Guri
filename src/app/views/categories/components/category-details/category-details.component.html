@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="header">
-    <h1>{{categoryDetails?.name}}</h1>
+    <h1>{{categoryDetails?.name + ' details'}}</h1>
   </div>
   <div class="category-details">
     <ng-container *ngIf="categoryDetails.name">
       <div>
         <label for="name"><b>name:</b></label>
-        <p>{{categoryDetails?.name}}</p>
+        <h1>{{categoryDetails?.name}}</h1>
       </div>
     </ng-container>
   </div>

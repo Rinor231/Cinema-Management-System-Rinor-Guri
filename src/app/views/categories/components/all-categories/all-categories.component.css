@@ -1,17 +1,16 @@
 .table {
   padding: 10px;
   border-radius: 10px;
-
 }
 
+
 th {
-  background: #198754;
+  background: #5b1987;
   color: #fff;
   height: 40px;
 }
 
 .delete-modal {
-  background-color: #fff;
   border: 1px solid lightgrey;
   width: 500px;
   height: 300px;

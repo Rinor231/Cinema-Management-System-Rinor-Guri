@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { MovieService } from '../../movies-service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoryService } from 'src/app/views/categories/categories-service';
 
 @Component({
   selector: 'app-edit-movie',
@@ -12,17 +13,26 @@ export class EditMovieComponent implements OnInit {
   editMovieForm:any = FormGroup;
   movieDetails:any
   movieId:any
-  constructor(private route:ActivatedRoute, private movieService:MovieService, private router:Router) { }
+  categoryList: any[] = [];
+  constructor(private route:ActivatedRoute,
+    private movieService:MovieService,
+    private router:Router,
+    private categoryService:CategoryService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params =>{
-      this.movieId = params['movieId'];
+      this.movieId = params['movieId'] || 0;
+      this.fetchMovieDetails();
     });
+
+    this.categoryList = this.categoryService.getCategories();
+
     this.editMovieForm = new FormGroup({
       title: new FormControl('', Validators.required),
-      category: new FormControl('', Validators.required),
+      categoryId: new FormControl('', Validators.required),
       releasedate: new FormControl('', Validators.required),
       director: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required)
     });
     this.fetchMovieDetails()
   }
@@ -35,9 +45,10 @@ export class EditMovieComponent implements OnInit {
 
   fillInputs(){
     this.editMovieForm.get('title').setValue(this.movieDetails.title);
-    this.editMovieForm.get('category').setValue(this.movieDetails.category);
+    this.editMovieForm.get('categoryId').setValue(this.movieDetails.categoryId);
     this.editMovieForm.get('releasedate').setValue(this.movieDetails.releasedate);
     this.editMovieForm.get('director').setValue(this.movieDetails.director);
+    this.editMovieForm.get('image').setValue(this.movieDetails.image)
   }
 
   onSubmit(){
@@ -46,9 +57,10 @@ export class EditMovieComponent implements OnInit {
         let payload = {
           id:JSON.parse(this.movieId),
           title:this.editMovieForm.value.title,
-          lastname:this.editMovieForm.value.lastname,
+          categoryId:this.editMovieForm.value.categoryId,
           releasedate:this.editMovieForm.value.releasedate,
-          director:this.editMovieForm.value.director
+          director:this.editMovieForm.value.director,
+          image:this.editMovieForm.value.image
         }
 
         this.movieService.updateMovie(payload);

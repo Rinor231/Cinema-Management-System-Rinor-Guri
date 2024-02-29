@@ -15,7 +15,7 @@ export class CategoryDetailsComponent implements OnInit {
     private route:ActivatedRoute
     ) {
       this.route.queryParams.subscribe(params =>{
-        this.categoryId = params['userId'];
+        this.categoryId = params['categoryId'];
       }
 
       )

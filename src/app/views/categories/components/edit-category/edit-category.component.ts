@@ -19,7 +19,7 @@ export class EditCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params =>{
-      this.CategoryId = params ['CategoryId'];
+      this.CategoryId = params ['categoryId'];
     });
     this.editCategoryForm = new FormGroup ({
       name: new FormControl('', Validators.required)
@@ -47,8 +47,8 @@ export class EditCategoryComponent implements OnInit {
 
         this.categoryService.updateCategory(payload);
         this.editCategoryForm.reset();
-        window.alert('Category edited. click ok to see all Categorys.');
-        this.router.navigateByUrl('/Categorys/all-Categorys');
+        window.alert('Category edited. click ok to see all Categories.');
+        this.router.navigateByUrl('categories/all-categories');
       }
       catch (error:any) {
         console.error('error editing Category:', error);
