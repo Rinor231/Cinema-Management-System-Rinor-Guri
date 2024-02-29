@@ -1,6 +1,10 @@
 .table {
   padding: 10px;
   border-radius: 10px;
+  background: #1e1e1e !important;
+}
+.main-content{
+  color: white;
 }
 
 
@@ -19,6 +23,7 @@ th {
   top: 40%;
   left: 40%;
   box-shadow: 0px 0px 20px 20px lightgrey;
+  color: white;
 }
 
 .delete-modal-header {

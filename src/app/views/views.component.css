@@ -35,9 +35,12 @@
 
 .landingpage-button {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .sidebar{
   background: #5b1987;
+}
+.content{
+  background: #1e1e1e;
 }
